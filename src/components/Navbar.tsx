@@ -10,10 +10,10 @@ export default function Navbar() {
     <header className="bg-sky-900 md:relative text-slate-200 flex flex-col gap-3 py-5 px-2">
       {/* APP NAME AND LOGO */}
       <div className="flex gap-4 items-center">
-        <span aria-hidden text-6xl>
+        <span aria-hidden className="text-2xl md:text-4xl">
           🌊
         </span>
-        <h1 className="font-bold text-2xl md:text-4xl tracking-tight md:tracking-wider">
+        <h1 className="font-bold text-3xl md:text-4xl tracking-tight md:tracking-wider">
           Watch Wave
         </h1>
       </div>
