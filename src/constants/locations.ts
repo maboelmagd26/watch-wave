@@ -1,4 +1,6 @@
-import type { Location } from "../types/types";
+import type { Location } from "../types/location";
+
+/** One-click shortcuts to popular coastal spots, shown in the navbar. */
 export const PRESET_CITIES: Location[] = [
   {
     id: "alex",

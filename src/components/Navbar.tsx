@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { PRESET_CITIES } from "../api/marineApi";
+import { PRESET_CITIES } from "../constants/locations";
 export default function Navbar() {
   const [query, setQuery] = useState("");
   const cityRef = useRef<HTMLInputElement | null>(null);
