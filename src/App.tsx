@@ -16,7 +16,10 @@ function App() {
         onLocationSelect={setSelectedLocation}
       />
       <main className="max-w-6xl mx-auto flex flex-col md:flex-row bg-white flex-1 min-w-4xl">
-        <LocationDashboard onLocationSelect={setSelectedLocation} />
+        <LocationDashboard
+          onLocationSelect={setSelectedLocation}
+          selectedLocation={selectedLocation}
+        />
       </main>
       <footer className="bg-amber-400">FOOTER</footer>
     </div>

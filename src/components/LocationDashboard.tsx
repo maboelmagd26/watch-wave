@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { toLocation } from "../api/geocodingApi";
-import useLocationSearch, { MIN_QUERY_LENGTH } from "../hooks/useLocationSearch";
+import useLocationSearch, {
+  MIN_QUERY_LENGTH,
+} from "../hooks/useLocationSearch";
 import type { Location } from "../types/location";
 import Filters from "./Filters";
 
@@ -43,11 +45,13 @@ function Flag({ code }: { code?: string }) {
 }
 
 type LocationDashboardProps = {
+  selectedLocation: Location;
   onLocationSelect: (location: Location) => void;
 };
 
 export default function LocationDashboard({
   onLocationSelect,
+  selectedLocation,
 }: LocationDashboardProps) {
   const [query, setQuery] = useState("");
   const [count, setCount] = useState(10);
@@ -94,6 +98,11 @@ export default function LocationDashboard({
       {/* RESULTS TABLE */}
       {data.length > 0 && (
         <div className="overflow-x-auto">
+          <p
+            className={`font-mono bg-sky-600 text-amber-50 rounded-lg border py-0.5 px-2 ${language !== "ar" ? "text-left" : "text-right"}`}
+          >
+            {selectedLocation.name}, {selectedLocation.country}
+          </p>
           <table className="w-full text-sm text-left">
             <thead className="bg-slate-100">
               <tr>
@@ -108,7 +117,7 @@ export default function LocationDashboard({
               {data.map((r) => (
                 <tr
                   key={r.id}
-                  className="border-b hover:bg-sky-50 cursor-pointer"
+                  className={`border-b hover:bg-sky-50 cursor-pointer ${selectedLocation.name === r.name ? "bg-sky-900 text-amber-50" : ""}`}
                   onClick={() => onLocationSelect(toLocation(r))}
                 >
                   <td className="p-2 flex items-center gap-2">
