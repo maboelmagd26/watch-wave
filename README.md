@@ -2,6 +2,8 @@
 
 A React + TypeScript app for choosing a coastal location to check wave conditions. Search any place in the world (in Arabic, German or English), select it, and the whole app knows which location is active.
 
+**Live demo:** [maboelmagd26.github.io/watch-wave](https://maboelmagd26.github.io/watch-wave/)
+
 > **Status:** the location-picking half is complete. The marine forecast that consumes the selected location is the next milestone (see [Future Improvements](#9-future-improvements)).
 
 ---
